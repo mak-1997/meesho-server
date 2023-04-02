@@ -3,9 +3,9 @@ const {editProduct,deleteProduct,deleteUser} = require("../controllers/admin.con
 
 const adminRouter = express.Router();
 
-adminRouter.patch("/product", editProduct);
-adminRouter.delete("/product",deleteProduct);
-adminRouter.delete("/user",deleteUser);
+adminRouter.patch("/product/:prodID", editProduct);
+adminRouter.delete("/product/:prodID",deleteProduct);
+adminRouter.delete("/user/:userID",deleteUser);
 
 
 module.exports = {adminRouter}
