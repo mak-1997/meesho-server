@@ -8,6 +8,19 @@ const adminSignup = async(req,res) => {
     
 }
 
+//  Add new product
+const addProduct = async(req,res)=> {
+    // Admin token check
+    const payload = req.body;
+    try {
+        const newProd = new ProductModel({...payload});
+        await newProd.save();
+        res.status(200).send(newProd);
+    } catch (error) {
+        res.status(400).send({ "msg": error.message });
+    }
+}
+
 // Admin Login 
 const adminLogin = async(req,res) => {
 
@@ -62,4 +75,4 @@ const deleteUser = async (req, res) => {
 }
 
 
-module.exports = { editProduct, deleteProduct, deleteUser }
+module.exports = { editProduct, deleteProduct, deleteUser, addProduct }
