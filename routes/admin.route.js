@@ -3,7 +3,7 @@ const {editProduct,deleteProduct,deleteUser} = require("../controllers/admin.con
 
 const adminRouter = express.Router();
 
-adminRouter.post("/product/", addProduct);
+adminRouter.post("/product", addProduct);
 adminRouter.patch("/product/:prodID", editProduct);
 adminRouter.delete("/product/:prodID",deleteProduct);
 adminRouter.delete("/user/:userID",deleteUser);
