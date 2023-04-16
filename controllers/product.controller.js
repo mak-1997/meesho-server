@@ -136,7 +136,6 @@ const updateProductData = async (req, res) => {
         const cartItem = cart.items.find(elem => elem.productID == _id);
         if (cartItem) {
             cartItem.quantity = addedQuantity;
-            console.log(cartItem)
         }
         else {
             cart.items.push({ productID: _id, quantity: addedQuantity });
